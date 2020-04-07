@@ -1,2 +1,2 @@
 print("Welcome to Tic Tac Toe")
-print("Hey")
+print("Hey ,hope you have a good day")
