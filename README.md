@@ -84,17 +84,6 @@ Instructions:
     Choose your next position:(1-9)
     8
     
-    |   O |                                         
-    |     |                                       
-    |     |                                          
----------------                                  
-    |     |                                         
-    |     |                                       
-    |     |                                         
-----------------                                 
-    |     |                                         
-c                               
-    |     |   
     
     And like this the game goes on .......
     
@@ -103,16 +92,7 @@ c
     
    Do you want to play again ? Enter Yes or No:
    NO
-    |     |                                       
-    |     |                                          
----------------                                  
-    |     |                                         
-    |     |                                       
-    |     |                                         
-----------------                                 
-    |     |                                         
- X  |  X  |  X                                   
-    |     |   
+
     
    Congratulations ! You have won the game!
    Do you want to play again ? Enter Yes or No: No
