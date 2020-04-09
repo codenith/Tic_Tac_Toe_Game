@@ -120,3 +120,64 @@ def player_choice(board):
 
 def replay():
     return input('Do you want to play agin? Enter  Yes or No: ').lower().startswith('y')
+
+
+# Main program
+print('Welcome to Tic Tac Toe!')
+# while to keep running the game
+while True:
+    # Set up everything on the board (board,who's first,choose markers X,0)
+    theBoard = [' '] * 10
+    # Now to set the markers of each players from the function player_input()
+    # Player_input()  function return 2 tuple values ,one for each
+    player1_marker, player2_marker = player_input()
+    # Now to decide whose turn we have to initialise a variable turn with the function choose_first
+    turn = choose_first()
+    print(turn+' will go first.')
+
+    play_game = input("Are you ready to play? Enter Yes or No: ")
+    if play_game.lower().startswith('y'):
+        game_on = True
+    else:
+        game_on = False
+    while game_on:
+        # Player one's turn
+        if turn == 'Player 1':
+            display_board(theBoard)  # Displaying the board
+            # Position to insert Player 1 marker
+            position = player_choice(theBoard)
+            # Calling the place_marker function
+            place_marker(theBoard, player1_marker, position)
+            if win_check(theBoard, player1_marker):
+                display_board(theBoard)
+                print('Congratulations! Player 1 won the game')
+                game_on = False  # Now the game ended ,so comes out of the loop
+            else:
+                if full_board_check(theBoard):
+                    display_board(theBoard)
+                    print('The game is a draw!')
+                    break
+                else:
+                    turn = 'Player 2'
+
+                    # Player 2 turn
+        else:
+            # Player 2's  turn
+            display_board(theBoard)  # Displaying the board
+            # Position to insert Player 1 marker
+            position = player_choice(theBoard)
+            # Calling the place_marker function
+            place_marker(theBoard, player2_marker, position)
+            if win_check(theBoard, player2_marker):
+                display_board(theBoard)
+                print('Congratulations! Player 2 won the game')
+                game_on = False  # Now the game ended ,so comes out of the loop
+            else:
+                if full_board_check(theBoard):
+                    display_board(theBoard)
+                    print('The game is a draw!')
+                    break
+                else:
+                    turn = 'Player 1'
+    if not replay():
+        break
